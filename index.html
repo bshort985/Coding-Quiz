@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="./assets/style.css" rel="stylesheet">
-        <link href="./assets/script.js">
+
         <title>Coding Quiz</title>
     </head>
     <body>
@@ -14,16 +14,13 @@
             <h3 class="timer">Timer</h3>
         </header>
         <section class="question-card">
-            <div>
+            <div id="question">
                 <h3>Question</h3>
             </div>
-            <div class="choices">
-                <button class="btn">Start Quiz</button>
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+            <div id="buttons" class="btn-grid">
+                <button id="start-btn" class="btn">Start Quiz</button>
             </div>
         </section>
+        <script src="./assets/script.js"></script>
     </body>
 </html>
