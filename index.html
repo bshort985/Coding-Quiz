@@ -8,19 +8,32 @@
 
         <title>Coding Quiz</title>
     </head>
+
     <body>
+
+    <section>
         <header class="header">
             <h3 class="high-scores">View High Scores</h3>
             <h3 class="timer">Timer</h3>
         </header>
-        <section class="question-card">
-            <div id="question">
-                <h3>Question</h3>
+    </section>
+
+    <main class="container">
+        <section id="question-card" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
             </div>
-            <div id="buttons" class="btn-grid">
-                <button id="start-btn" class="btn">Start Quiz</button>
-            </div>
+            
         </section>
+        <div class="start">
+            <button id="start-btn" class="btn">Start Quiz</button>
+        </div>
+    </main>
+
         <script src="./assets/script.js"></script>
     </body>
 </html>
