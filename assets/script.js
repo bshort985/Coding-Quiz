@@ -1,15 +1,12 @@
-//create an array to hold the questions and answers
-// match answers with the questions
-// append questions to the page after quiz start
-// add coutndown timer
-
 const startButton = document.getElementById("start-btn");
 const questionCardElement = document.getElementById ("question-card")
 const questionElement = document.getElementById("question")
 const answerBtnElement = document.getElementById("answer-buttons")
-let currentQuestion
+let score = 60000;
+let questionIndex
 
-const questionIndex = [
+
+const questions = [
     { 
         question: "Commonly used data types DO not Include:",
             answer: [
@@ -62,32 +59,69 @@ const questionIndex = [
 ]
 
 
-//crate a function to start the quiz
-
-
+// function to start the quiz
 
 
 function startQuiz() {
-    console.log(questionIndex)
-    console.log("started")
-    startButton.classList.add("hide")
-    currentQuestion = 0
-    questionCardElement.classList.remove("hide")
-    nextQuestion()
+
+    timer=setInterval(() => {
+        score -= 1000
+        if (score <= 0){
+            gameOver()
+            clearInterval(timer)
+        }
+      
+    }, 1000);
+
+    startButton.classList.add("hide");
+    questionIndex = 0;
+    questionCardElement.classList.remove("hide");
+    nextQuestion();
+}
 
 //create a function to start next question
 
+let timer
 function nextQuestion() {
-    showQuestion([currentQuestion])
+   
+
+    document.getElementById("question").innerHTML = questions[questionIndex].question;
+    document.getElementsByClassName("btn")[0].innerHTML = questions[questionIndex].answer[0].text;
+    document.getElementsByClassName("btn")[1].innerHTML = questions[questionIndex].answer[1].text;
+    document.getElementsByClassName("btn")[2].innerHTML = questions[questionIndex].answer[2].text;
+    document.getElementsByClassName("btn")[3].innerHTML = questions[questionIndex].answer[3].text;
 }
 
 
 
-function showQuestion(question) {
-    questionElement.innerText.question.question
+// create a function to select answer
+
+function selectAnswer(e) {
+   
+    if (questions[questionIndex].answer[e].correct === true) {
+        document.getElementById("alert").innerHTML = "Correct";
+    }
+    else {
+        document.getElementById("alert").innerHTML = "Wrong";
+        score -= 10000;
+    }
+    questionIndex++;
+    if (questionIndex === questions.length){
+        gameOver()
+    }
+    else{
+    nextQuestion();
+    }
 }
 
-//create a function to select an answer
+function gameOver(){
+    clearInterval(timer)
+    document.getElementById("input-field").classList.remove("hide");
+    document.getElementById("game-over").innerHTML = "Your final score is: " + score/1000;
+}
+
+
+
 //create local storage to hold the high scores
 
 
