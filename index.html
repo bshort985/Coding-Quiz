@@ -13,14 +13,14 @@
 
     <section>
         <header class="header">
-            <h3 class="high-scores">View High Scores</h3>
-            <h3 class="timer">Timer</h3>
+            <button id="high-scores" class="btn2">View High Scores</button>
+            <h3 id="timer">Timer</h3>
         </header>
     </section>
 
     <main class="container">
         <section id="question-card" class="hide">
-            <div id="question">Question</div>
+            <div id="question" class="question-text">Question</div>
             <div id="answer-buttons" class="btn-grid">
                 <button class="btn" onclick="selectAnswer(0)">Answer 1</button>
                 <button class="btn" onclick="selectAnswer(1)">Answer 2</button>
@@ -34,15 +34,23 @@
                 </h2>
             </div>
 
-            <div id="input-field" class="hide">
-                <p id="game-over">
-                    Your score is: 100
-                </p>
-                <input type="text" id="int">
-            </div>
-
-
         </section>
+
+        <div id="input-field" class="hide">
+            <p id="game-over">
+                Your score is: 100
+            </p>
+            <input type="text" id="int">
+            <button id="submit" class="sub-btn" onclick="storeData()">Submit</button>
+        </div>
+
+        <div id="endGame" class="hide">
+            <p>
+                Thank you for playing! 
+                Click on the High Scores button to see where you ranked. 
+            </p>
+        </div>
+
         <div class="start">
             <button id="start-btn" class="btn">Start Quiz</button>
         </div>

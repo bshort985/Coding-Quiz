@@ -15,6 +15,7 @@
 }
 
 .btn-grid {
+    margin-top: 15px;
     display: grid;
     grid-template-columns: auto;
     gap: 10px;
@@ -22,4 +23,14 @@
 
 .hide {
     display: none;
+}
+
+.btn{
+    background-color: blue;
+    color: black;
+    font-size: larger;
+}
+
+.question-text{
+    font-size: x-large;
 }

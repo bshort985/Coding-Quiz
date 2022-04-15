@@ -1,8 +1,11 @@
 const startButton = document.getElementById("start-btn");
+const submitButton = document.getElementById("submit")
 const questionCardElement = document.getElementById ("question-card")
 const questionElement = document.getElementById("question")
 const answerBtnElement = document.getElementById("answer-buttons")
-let score = 60000;
+const timerElement = document.getElementById("timer")
+const inputElement = document.getElementById("input-field")
+let score = 30000;
 let questionIndex
 
 
@@ -61,7 +64,7 @@ const questions = [
 
 // function to start the quiz
 
-
+let timer
 function startQuiz() {
 
     timer=setInterval(() => {
@@ -69,10 +72,12 @@ function startQuiz() {
         if (score <= 0){
             gameOver()
             clearInterval(timer)
+            console.log("game over")
         }
       
     }, 1000);
 
+    
     startButton.classList.add("hide");
     questionIndex = 0;
     questionCardElement.classList.remove("hide");
@@ -81,7 +86,7 @@ function startQuiz() {
 
 //create a function to start next question
 
-let timer
+
 function nextQuestion() {
    
 
@@ -100,6 +105,7 @@ function selectAnswer(e) {
    
     if (questions[questionIndex].answer[e].correct === true) {
         document.getElementById("alert").innerHTML = "Correct";
+        score += 10000;
     }
     else {
         document.getElementById("alert").innerHTML = "Wrong";
@@ -112,17 +118,40 @@ function selectAnswer(e) {
     else{
     nextQuestion();
     }
+    console.log(score)
 }
 
 function gameOver(){
     clearInterval(timer)
     document.getElementById("input-field").classList.remove("hide");
     document.getElementById("game-over").innerHTML = "Your final score is: " + score/1000;
+    questionCardElement.classList.add("hide");
 }
+
+
 
 
 
 //create local storage to hold the high scores
 
+const submitInt = document.getElementById("int");
+const submitIntBtn = document.getElementById("submit");
 
-startButton.addEventListener('click', startQuiz)
+function storeData(){
+    const intials = submitInt.value;
+    const storeScore = score;
+
+    console.log(intials)
+    console.log(score)
+    console.log("input data")
+
+    inputElement.classList.add("hide")
+    document.getElementById("endGame").classList.remove("hide")
+}
+
+// when the high score button is clicked then all the high scores will show
+
+
+
+
+startButton.addEventListener('click', startQuiz);
