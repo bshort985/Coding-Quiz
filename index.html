@@ -13,7 +13,7 @@
 
     <section>
         <header class="header">
-            <button id="high-scores" class="btn2">View High Scores</button>
+            <button id="high-scores" class="btn2" onclick="showHighScores()">View High Scores</button>
             <h3 id="timer">Timer</h3>
         </header>
     </section>
@@ -44,16 +44,27 @@
             <button id="submit" class="sub-btn" onclick="storeData()">Submit</button>
         </div>
 
-        <div id="endGame" class="hide">
+        <div id="endGame" class="hide endGame">
             <p>
                 Thank you for playing! 
                 Click on the High Scores button to see where you ranked. 
             </p>
         </div>
 
-        <div class="start">
-            <button id="start-btn" class="btn">Start Quiz</button>
+        <div id="start-btn" class="start">
+            <p>
+                Hello There! Thank you for playing my Coding Quiz. Rules are that once you begin 
+                a timer will start counting down from 90 seconds. Every wrong answer will deduct 5 seconds on the timer. Every correct 
+                answer will add 10 seconds. At the end of the quiz your remaing time will be your score. Good Luck!
+            </p>
+            <button class="start-btn">Start Quiz</button>
         </div>
+
+        <section id="scoreCard" class="hide">
+            <ul id="highScores">
+              
+            </ul>
+        </section>
     </main>
 
         <script src="./assets/script.js"></script>

@@ -14,23 +14,63 @@
     align-items: center;
 }
 
+.start {
+    max-width: 50%;
+   
+    font-size: larger;
+    display: grid;
+    grid-template-columns: auto;
+}
+
 .btn-grid {
     margin-top: 15px;
     display: grid;
     grid-template-columns: auto;
     gap: 10px;
+    
 }
 
 .hide {
     display: none;
 }
 
-.btn{
-    background-color: blue;
+.start-btn{
+    background-color: lightgreen;
     color: black;
     font-size: larger;
+    border-radius: 20px; 
+    width: 20%;
+    text-shadow: black;
+    
+}
+
+.btn{
+    background-color: lightgreen;
+    color: black;
+    font-size: larger;
+    border-radius: 20px; 
+    width: 60%;
+    text-align: left;
+    text-shadow: black;
+}
+
+.btn2{
+    background-color: lightgreen;
+    color: black;
+    font-size: larger;
+    border-radius: 20px; 
 }
 
 .question-text{
     font-size: x-large;
+}
+
+.endGame{
+    font-size: large;
+
+}
+
+.alert{
+    font-style: oblique;
+    color: blueviolet;
 }

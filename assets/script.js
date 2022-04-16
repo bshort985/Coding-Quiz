@@ -5,7 +5,9 @@ const questionElement = document.getElementById("question")
 const answerBtnElement = document.getElementById("answer-buttons")
 const timerElement = document.getElementById("timer")
 const inputElement = document.getElementById("input-field")
-let score = 30000;
+const intElement = document.querySelector("#highScores");
+let score = 30;
+let timer
 let questionIndex
 
 
@@ -64,20 +66,23 @@ const questions = [
 
 // function to start the quiz
 
-let timer
-function startQuiz() {
 
-    timer=setInterval(() => {
-        score -= 1000
+function startQuiz() {
+   
+ timer = setInterval(() => {
+        score--;
+        timerElement.textContent = score;
         if (score <= 0){
             gameOver()
             clearInterval(timer)
-            console.log("game over")
+            return;
         }
       
+        
     }, 1000);
-
     
+
+    timerElement.textContent = score;
     startButton.classList.add("hide");
     questionIndex = 0;
     questionCardElement.classList.remove("hide");
@@ -105,11 +110,11 @@ function selectAnswer(e) {
    
     if (questions[questionIndex].answer[e].correct === true) {
         document.getElementById("alert").innerHTML = "Correct";
-        score += 10000;
+        score += 10;
     }
     else {
         document.getElementById("alert").innerHTML = "Wrong";
-        score -= 10000;
+        score -= 5;
     }
     questionIndex++;
     if (questionIndex === questions.length){
@@ -124,7 +129,7 @@ function selectAnswer(e) {
 function gameOver(){
     clearInterval(timer)
     document.getElementById("input-field").classList.remove("hide");
-    document.getElementById("game-over").innerHTML = "Your final score is: " + score/1000;
+    document.getElementById("game-over").innerHTML = "Your final score is: " + score;
     questionCardElement.classList.add("hide");
 }
 
@@ -137,21 +142,34 @@ function gameOver(){
 const submitInt = document.getElementById("int");
 const submitIntBtn = document.getElementById("submit");
 
+let initials 
+let savedScore 
+
 function storeData(){
-    const intials = submitInt.value;
-    const storeScore = score;
-
-    console.log(intials)
-    console.log(score)
-    console.log("input data")
-
-    inputElement.classList.add("hide")
-    document.getElementById("endGame").classList.remove("hide")
-}
+    
+    inputElement.classList.add("hide");
+    document.getElementById("endGame").classList.remove("hide");
+    localStorage.setItem("initials", submitInt.value);
+    //localStorage.setItem("score", score)
+   
+    
+};
 
 // when the high score button is clicked then all the high scores will show
 
+function showHighScores(){
+        
+        let listEl = document.createElement("li");
+        listEl.innerText = localStorage.initials;
+        intElement.appendChild(listEl);
+        document.getElementById("scoreCard").classList.remove("hide")
+        //document.getElementById("playerScore").innerHTML = localStorage.score;
 
+       
+      
+        document.getElementById("endGame").classList.add("hide");
+        document.getElementById("highScores").classList.remove("hide");
+}
 
 
 startButton.addEventListener('click', startQuiz);
