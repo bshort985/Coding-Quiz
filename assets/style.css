@@ -76,7 +76,7 @@
 }
 
 .question-text{
-    font-size: x-large;
+    font-size: 150%;
 }
 
 .endGame{
@@ -95,5 +95,5 @@
 
 #highScores{
     font-size: 150%;
-    
+
 }
