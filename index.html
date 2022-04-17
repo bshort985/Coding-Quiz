@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lanr="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
     <section>
         <header class="header">
             <button id="high-scores" class="btn2" onclick="showHighScores()">View High Scores</button>
+            <button id="restart" class="btn3 hide" onclick="tryAgain()">Try Again</button>
             <h3 id="timer">Timer</h3>
         </header>
     </section>
@@ -41,7 +42,7 @@
                 Your score is: 100
             </p>
             <input type="text" id="int">
-            <button id="submit" class="sub-btn" onclick="storeData()">Submit</button>
+            <button id="submit" class="sub-btn" onclick="inputName()">Submit</button>
         </div>
 
         <div id="endGame" class="hide endGame">

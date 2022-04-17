@@ -61,6 +61,20 @@
     border-radius: 20px; 
 }
 
+.btn3{
+    background-color: lightgreen;
+    color: black;
+    font-size: larger;
+    border-radius: 20px;
+}
+
+.sub-btn{
+    background-color: lightgreen;
+    color: black;
+    font-size: larger;
+    border-radius: 20px;
+}
+
 .question-text{
     font-size: x-large;
 }
@@ -73,4 +87,8 @@
 .alert{
     font-style: oblique;
     color: blueviolet;
+}
+
+#int{
+    border-radius: 20px;
 }
