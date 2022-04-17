@@ -11,6 +11,8 @@
 
     <body>
 
+<!-- header -->
+
     <section>
         <header class="header">
             <button id="high-scores" class="btn2" onclick="showHighScores()">View High Scores</button>
@@ -18,6 +20,8 @@
             <h3 id="timer">Timer</h3>
         </header>
     </section>
+
+    <!-- question and answer section -->
 
     <main class="container">
         <section id="question-card" class="hide">
@@ -37,6 +41,8 @@
 
         </section>
 
+        <!-- input field  -->
+
         <div id="input-field" class="hide">
             <p id="game-over">
                 Your score is: 100
@@ -45,6 +51,8 @@
             <button id="submit" class="sub-btn" onclick="inputName()">Submit</button>
         </div>
 
+        <!-- end game div -->
+
         <div id="endGame" class="hide endGame">
             <p>
                 Thank you for playing! 
@@ -52,15 +60,19 @@
             </p>
         </div>
 
+        <!-- welocome card with instructions -->
+
         <div id="start-btn" class="start">
             <p>
                 Hello There! Thank you for playing my Coding Quiz. Rules are that once you begin 
-                a timer will start counting down from 90 seconds. Every wrong answer will deduct 5 seconds on the timer. Every correct 
+                a timer will start counting down from 60 seconds. Every wrong answer will deduct 15 seconds on the timer. Every correct 
                 answer will add 10 seconds. At the end of the quiz your remaing time will be your score. Good Luck!
             </p>
             <button class="start-btn">Start Quiz</button>
         </div>
 
+        <!-- section to hold high scores -->
+        
         <section id="scoreCard" class="hide">
             <ul id="highScores">
               

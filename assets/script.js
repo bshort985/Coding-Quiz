@@ -9,7 +9,7 @@ const intElement = document.querySelector("#highScores");
 const playerScores = JSON.parse(localStorage.getItem("playerScores")) || [];
 const newScore = localStorage.getItem("score");
 const maxPalyerScores = 5;
-let score = 30;
+let score = 60;
 let timer
 let questionIndex
 
@@ -109,7 +109,7 @@ function nextQuestion() {
 
 
 
-// create a function to select answer
+// create a function to select answer 
 
 function selectAnswer(e) {
    
@@ -119,7 +119,7 @@ function selectAnswer(e) {
     }
     else {
         document.getElementById("alert").innerHTML = "Wrong";
-        score -= 10;
+        score -= 15;
     }
     questionIndex++;
     if (questionIndex === questions.length){
